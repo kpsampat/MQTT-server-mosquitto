@@ -12,15 +12,19 @@ https://www.ev3dev.org/docs/tutorials/sending-and-receiving-messages-with-mqtt/
 
 We need a broker that is always available. Just one for the whole network. It can be a PC, a Raspberry Pi or even an EV3. If it is a Debian-based linux system we can use mosquitto
 
+```
+● mosquitto.service - LSB: mosquitto MQTT v3.1 message broker
+   Loaded: loaded (/etc/init.d/mosquitto; generated)
+   Active: active (exited) since Mon 2020-11-16 06:36:22 UTC; 4h 55min ago
+     Docs: man:systemd-sysv-generator(8)
+
+Nov 16 06:36:22 orbit systemd[1]: Starting LSB: mosquitto MQTT v3.1 message broker...
+Nov 16 06:36:22 orbit mosquitto[12430]:  * Starting network daemon: mosquitto
+Nov 16 06:36:22 orbit mosquitto[12430]:    ...done.
+Nov 16 06:36:22 orbit systemd[1]: Started LSB: mosquitto MQTT v3.1 message broker.
 
 ```
-kishan@dev:~# systemctl status mosquitto
-● mosquitto.service - LSB: mosquitto MQTT v3.1 message broker
-   Loaded: loaded (/etc/init.d/mosquitto)
-   Active: active (running) since Wed 2016-05-11 07:40:51 WEST; 7min ago
-   CGroup: /system.slice/mosquitto.service
-           └─685 /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
-```
+
 Now we are able to send and receive messages through the broker (by default mosquitto uses port 1883).
 
 ``` sudo apt-get install python3-pip ```
