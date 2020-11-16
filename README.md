@@ -70,7 +70,7 @@ def on_message(client, userdata, msg):
     
 while True:
    client = mqtt.Client()
-   client.connect("THE_IP_ADDRESS_OF_OUR_BROKER",1883,60)
+   client.connect("THE_IP_ADDRESS_OF_OUR_BROKER",1883,60)  #THE_IP_ADDRESS_OF_OUR_BROKER == Server IP Public IP of VM
 
    client.on_connect = on_connect
    client.on_message = on_message
